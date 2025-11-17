@@ -4,6 +4,13 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/.venv1" />
+      <excludeFolder url="file://$MODULE_DIR$/citian_assessment/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/citian_assessment/airflow/dags/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/citian_assessment/airflow/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/citian_assessment/dbt_project/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/citian_assessment/dbt_project/target" />
+      <excludeFolder url="file://$MODULE_DIR$/citian_assessment/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/citian_assessment/target" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.11 (citian_oa)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

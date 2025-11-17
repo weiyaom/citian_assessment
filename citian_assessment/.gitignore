@@ -1,0 +1,48 @@
+# macOS system files
+.DS_Store
+
+# IDE / Editor files
+.idea/
+*.iml
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+*.venv
+env/
+venv/
+.env/
+*.egg-info/
+*.egg
+
+# dbt
+dbt_project/logs/
+dbt_project/target/
+target/
+logs/
+
+# Airflow
+airflow/airflow-webserver.pid
+airflow/airflow.cfg
+airflow/airflow.db
+airflow/logs/
+airflow/dags/__pycache__/
+airflow/dags/logs/
+
+# Citian Assessment specific
+citian_assessment/.DS_Store
+citian_assessment/.idea/
+citian_assessment/airflow/airflow-webserver.pid
+citian_assessment/airflow/airflow.cfg
+citian_assessment/airflow/airflow.db
+citian_assessment/airflow/dags/__pycache__/
+citian_assessment/airflow/dags/logs/
+citian_assessment/airflow/logs/
+citian_assessment/dbt_project/logs/
+citian_assessment/dbt_project/target/
+citian_assessment/logs/
+citian_assessment/target/

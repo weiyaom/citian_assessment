@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: public
+    tables:
+      - name: yellow_trips_clean
+        description: "Cleaned NYC taxi trip data loaded via Airflow"
+        columns:
+          - name: 'VendorID'
+            description: "Taxi provider ID"
+            tests:
+              - not_null
+              - accepted_values:
+                  values: [1, 2]
+          - name: tpep_pickup_datetime
+            description: "Trip pickup timestamp"
+            tests:
+              - not_null
+          - name: passenger_count
+            description: "Number of passengers"

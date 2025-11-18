@@ -20,8 +20,6 @@ def fast_copy_parquet_to_postgres(filepath: str, table_name: str):
     df = pd.read_parquet(filepath)
     # df = df.head(20000)
     logging.info(f"Loaded DataFrame shape: {df.shape}")
-
-    # 2. 建立 Postgres 连接
     conn = psycopg2.connect(
         dbname="testdb",
         user="miya",
@@ -31,17 +29,15 @@ def fast_copy_parquet_to_postgres(filepath: str, table_name: str):
     )
     cur = conn.cursor()
 
-    # 建表（根据 DataFrame 列名和类型）
+
     cols_with_types = ", ".join([f"{col} TEXT" for col in df.columns])  # 全部用 TEXT 简单处理
     cur.execute(f"CREATE TABLE IF NOT EXISTS {table_name} ({cols_with_types});")
     conn.commit()
 
-    # 3. pandas → CSV buffer（内存） → COPY FROM
     buffer = io.StringIO()
     df.to_csv(buffer, index=False, header=False)
     buffer.seek(0)
 
-    # 4. COPY 到 Postgres
     cur.copy_from(buffer, table_name, sep=",")
     conn.commit()
 
